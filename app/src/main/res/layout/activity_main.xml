@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.mykuyademo.enums.MainTab"/>
+        <variable
+            name="presenter"
+            type="com.mykuyademo.MainPresenter" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/frContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <fragment
+            android:id="@+id/nav_home_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/tabHome"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/main_graph" />
+
+        <LinearLayout
+            android:id="@+id/tabHome"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_alignParentBottom="true"
+            android:background="#FFFFFF"
+            android:elevation="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingTop="5dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{() -> presenter.onHomeTab(MainTab.HOME)}"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    tabSelected="@{presenter.tabIndex}"
+                    tabID="@{presenter.tabHome}"
+                    app:srcCompat="@drawable/ic_menu_home" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    tabTextSelected="@{presenter.tabIndex}"
+                    tabTextID="@{presenter.tabHome}"
+                    android:gravity="center"
+                    android:text="@string/home" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{() -> presenter.onHomeTab(MainTab.MY_JOB)}"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    tabSelected="@{presenter.tabIndex}"
+                    tabID="@{presenter.tabMyJob}"
+                    app:srcCompat="@drawable/ic_menu_myjob" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    tabTextSelected="@{presenter.tabIndex}"
+                    tabTextID="@{presenter.tabMyJob}"
+                    android:gravity="center"
+                    android:text="@string/my_jobs" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{() -> presenter.onHomeTab(MainTab.SUPPORT)}"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    tabSelected="@{presenter.tabIndex}"
+                    tabID="@{presenter.tabSupport}"
+                    app:srcCompat="@drawable/ic_menu_home" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    tabTextSelected="@{presenter.tabIndex}"
+                    tabTextID="@{presenter.tabSupport}"
+                    android:text="@string/support" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{() -> presenter.onHomeTab(MainTab.NEWS)}"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    tabSelected="@{presenter.tabIndex}"
+                    tabID="@{presenter.tabNews}"
+                    app:srcCompat="@drawable/ic_menu_inbox" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    tabTextSelected="@{presenter.tabIndex}"
+                    tabTextID="@{presenter.tabNews}"
+                    android:gravity="center"
+                    android:text="@string/news" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{() -> presenter.onHomeTab(MainTab.ACCOUNT)}"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    tabSelected="@{presenter.tabIndex}"
+                    tabID="@{presenter.tabAccount}"
+                    app:srcCompat="@drawable/ic_menu_account" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    tabTextSelected="@{presenter.tabIndex}"
+                    tabTextID="@{presenter.tabAccount}"
+                    android:gravity="center"
+                    android:text="@string/account" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

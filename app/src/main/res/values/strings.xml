@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MyKuyaDemo</string>
+    <string name="home">Home</string>
+    <string name="my_jobs">My Jobs</string>
+    <string name="support">Support</string>
+    <string name="news">News</string>
+    <string name="account">Account</string>
+    <string name="featured">Featured</string>
+    <string name="learn_more">Learn more</string>
+    <string name="what_news">What\'s New</string>
+    <string name="google_maps_key">AIzaSyCgq_n2pAQYlV3LaTH-UyjqE5NbHxU9YxQ</string>
+    <string name="confirm">Confirm</string>
+</resources>
